@@ -1,13 +1,34 @@
 pipeline{
-    agent any
-    stages('1-test-git'){
-        steps{
-            echo "unit testing"
+	agent any
+	stages{
+		stage('1-s1'){
+			steps{
+				sh 'cat /etc/passwd'
+				sh 'whoami'
+			}
+		}
+		stage('2-s2'){
+			steps{
+				sh 'lscpu'
+				sh 'logname'
+			}
+		}
+		stage('3-s3'){
+			steps{
+				sh 'df -h'
+				sh 'touch team6'
+			}
+		}
+		stage('4-s4'){
+			steps{
+				sh 'pwd'
+				sh 'du -h'				
+			}
+		}
+        stage('5-s5'){
+            steps{
+                sh 'echo "successful"'
+            }
         }
-    }
-    stages('2-build'){
-        steps{
-            echo "building...."
-        }
-    }
+	}
 }
