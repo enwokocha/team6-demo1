@@ -10,7 +10,7 @@ pipeline{
 		stage('2-s2'){
 			steps{
 				sh 'lscpu'
-				sh 'logname'
+				sh 'whoami'
 			}
 		}
 		stage('3-s3'){
@@ -27,7 +27,7 @@ pipeline{
 		}
         stage('5-s5'){
             steps{
-                sh 'echo "successful"'
+                echo "Welcome to Jenkinsfile"
             }
         }
 	}
