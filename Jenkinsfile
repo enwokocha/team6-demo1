@@ -29,5 +29,10 @@ pipeline{
                 echo "Welcome to Jenkinsfile"
             }
         }
+        stage('6-scripting'){
+            steps{
+                sh 'bash -x /var/lib/jenkins/workspace/team6-demo1-pipeline/scripting.sh'
+            }
+        }
 	}
 }
