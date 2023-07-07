@@ -25,9 +25,18 @@ pipeline{
 			}
 		}
         stage('5-s5'){
-            steps{
-                echo "Welcome to Jenkinsfile"
-            }
+            parallel {
+				stage('p1'){
+					steps{
+						echo "first parallel-stage"
+					}
+				}
+				stage('p2'){
+					steps{
+						echo "second parallel-stage"
+					}
+				}
+			}
         }
         stage('6-scripting'){
             steps{
