@@ -36,6 +36,11 @@ pipeline{
 						echo "second parallel-stage"
 					}
 				}
+                stage('p3'){
+                    steps{
+                        echo "Welcome to Jenkinsfile"
+                    }
+                }
 			}
         }
         stage('6-scripting'){
